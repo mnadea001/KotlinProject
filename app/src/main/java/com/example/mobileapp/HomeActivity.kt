@@ -11,14 +11,14 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-        val buttonStudentList=findViewById<Button>(R.id.buttonStudentList)
-        val buttonCategoryList=findViewById<Button>(R.id.buttonCategoryList)
+        val buttonStudentList = findViewById<Button>(R.id.buttonStudentList)
+        val buttonCategoryList = findViewById<Button>(R.id.buttonCategoryList)
 //        add background on buttons
         buttonStudentList.setBackgroundColor(Color.parseColor("#F5F749"))
         buttonCategoryList.setBackgroundColor(Color.parseColor("#F5F749"))
 //        add event on click
         buttonStudentList.setOnClickListener(View.OnClickListener {
-        val intent= Intent(application,StudentListActivity::class.java)
+            val intent = Intent(application, StudentListActivity::class.java)
             startActivity(intent)
         })
 

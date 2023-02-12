@@ -16,22 +16,20 @@
             android:orientation="vertical" >
 
             <Button
-                android:id="@+id/button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
+                android:id="@+id/button_student1"
+                style="@style/HomeButton"
+                android:text="@string/student_list_button1"
+                />
 
             <Button
-                android:id="@+id/button2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
+                android:id="@+id/button_student2"
+                style="@style/HomeButton"
+                android:text="@string/student_list_button2" />
 
             <Button
-                android:id="@+id/button3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
+                android:id="@+id/button_student3"
+                style="@style/HomeButton"
+                android:text="@string/student_list_button3" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
