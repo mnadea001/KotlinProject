@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
-class StudentListActivity : AppCompatActivity() {
+class StudentListActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_student_list)
@@ -16,5 +16,9 @@ class StudentListActivity : AppCompatActivity() {
         buttonStudent1.setBackgroundColor(Color.parseColor("#F5F749"))
         buttonStudent2.setBackgroundColor(Color.parseColor("#F5F749"))
         buttonStudent3.setBackgroundColor(Color.parseColor("#F5F749"))
+
+        setHeaderTxt("Infos")
+        showBack()
     }
+
 }

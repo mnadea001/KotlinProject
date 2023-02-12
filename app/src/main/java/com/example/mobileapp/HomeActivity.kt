@@ -8,14 +8,13 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+        
 
-        val textViewTitle=findViewById<TextView>(R.id.textViewTitle)
-
-        textViewTitle.setText("Home")
+        setHeaderTxt("Home")
 
 
         val buttonStudentList = findViewById<Button>(R.id.buttonStudentList)
