@@ -14,21 +14,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
-
-
             <Button
                 android:id="@+id/buttonStudentList"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
+                style="@style/HomeButton"
                 android:text="@string/home_btn_student_list"
               />
 
             <Button
                 android:id="@+id/buttonCategoryList"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
+                style="@style/HomeButton"
                 android:text="@string/home_btn_category_list"
             />
         </LinearLayout>
