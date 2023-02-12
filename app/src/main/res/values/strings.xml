@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">mon</string>
+    <string name="app_name">mon app</string>
     <string name="home_btn_student_list">Info</string>
     <string name="home_btn_category_list">Produits</string>
     <string name="student_list_button1">Eliott Bernard</string>

@@ -16,7 +16,7 @@ class StudentDetailActivity : BaseActivity() {
             val url=intent.extras!!.getString("url","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj0AEwRdUSWfs2LPDlLKn9kI-KvverDKfy0w&usqp=CAU");
             Picasso.get().load(url).into(image);
             val title=intent.extras!!.getString("title","Epsi")
-            textViewTitle.setText(title)
+            setHeaderTxt(title)
         }
 
         showBack()
