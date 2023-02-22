@@ -13,6 +13,8 @@ class StudentListActivity : BaseActivity() {
         val buttonStudent1 = findViewById<Button>(R.id.button_student1)
         val buttonStudent2 = findViewById<Button>(R.id.button_student2)
         val buttonStudent3 = findViewById<Button>(R.id.button_student3)
+
+
 //        add background on buttons
         buttonStudent1.setBackgroundColor(Color.parseColor("#F5F749"))
         buttonStudent2.setBackgroundColor(Color.parseColor("#F5F749"))
@@ -35,6 +37,7 @@ class StudentListActivity : BaseActivity() {
             startImageActivity(url,getString(R.string.student_list_button3))
         })
 
+
     }
 
     private fun startImageActivity(url: String, title: String) {
@@ -43,5 +46,7 @@ class StudentListActivity : BaseActivity() {
         intent.putExtra("title", title)
         startActivity(intent)
     }
+
+
 
 }
