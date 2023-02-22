@@ -25,25 +25,29 @@ class StudentListActivity : BaseActivity() {
 
         buttonStudent1.setOnClickListener(View.OnClickListener {
             val url = "https://media.licdn.com/dms/image/D4E03AQF6AKZkd6n8YQ/profile-displayphoto-shrink_200_200/0/1669020728022?e=1681948800&v=beta&t=7_4-TZxqLq_lX6maxtsXflEdJJTKKdlsReoDDb3XD78"
-            startImageActivity(url,getString(R.string.student_list_button1))
+            val studentId = 0
+            startImageActivity(url,getString(R.string.student_list_button1), studentId)
         })
 
         buttonStudent2.setOnClickListener(View.OnClickListener {
             val url = "https://media.licdn.com/dms/image/D4E35AQEtSrH6VNpFuQ/profile-framedphoto-shrink_800_800/0/1646042283242?e=1677664800&v=beta&t=OHcU7IGUVW4XsLEgTGQ8-gIUfnlQsPPi5yMXGEVH1pM"
-            startImageActivity(url,getString(R.string.student_list_button2))
+            val studentId = 1
+            startImageActivity(url,getString(R.string.student_list_button2), studentId)
         })
         buttonStudent3.setOnClickListener(View.OnClickListener {
+            val studentId = 2
             val url = "https://media.licdn.com/dms/image/C4D03AQE-jTdsID5CYw/profile-displayphoto-shrink_200_200/0/1633015059108?e=1681948800&v=beta&t=Y3ErQgjcuPHIlwJpTMF82jpTqdgU7y-OsXkpk3ezvlg"
-            startImageActivity(url,getString(R.string.student_list_button3))
+            startImageActivity(url,getString(R.string.student_list_button3), studentId)
         })
 
 
     }
 
-    private fun startImageActivity(url: String, title: String) {
+    private fun startImageActivity(url: String, title: String, studentId :Number) {
         val intent = Intent(application, StudentDetailActivity::class.java)
         intent.putExtra("url", url)
         intent.putExtra("title", title)
+        intent.putExtra("studentId", studentId)
         startActivity(intent)
     }
 
