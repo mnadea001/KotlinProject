@@ -27,10 +27,9 @@ class StudentListActivity : BaseActivity() {
         })
 
         buttonStudent2.setOnClickListener(View.OnClickListener {
-            val url = "https://media.licdn.com/dms/image/D4E35AQEtSrH6VNpFuQ/profile-framedphoto-shrink_200_200/0/1646042283242?e=1676833200&v=beta&t=FWJIYrBmJ7aRwRfKY9QhKtckbWkYTsGVja37v0szhLA"
+            val url = "https://media.licdn.com/dms/image/C4D03AQE-jTdsID5CYw/profile-displayphoto-shrink_200_200/0/1633015059108?e=1681948800&v=beta&t=Y3ErQgjcuPHIlwJpTMF82jpTqdgU7y-OsXkpk3ezvlg"
             startImageActivity(url,getString(R.string.student_list_button2))
         })
-
         buttonStudent3.setOnClickListener(View.OnClickListener {
             val url = "https://media.licdn.com/dms/image/C4D03AQE-jTdsID5CYw/profile-displayphoto-shrink_200_200/0/1633015059108?e=1681948800&v=beta&t=Y3ErQgjcuPHIlwJpTMF82jpTqdgU7y-OsXkpk3ezvlg"
             startImageActivity(url,getString(R.string.student_list_button3))
@@ -38,7 +37,7 @@ class StudentListActivity : BaseActivity() {
 
     }
 
-    private fun startImageActivity(url: String, string: String) {
+    private fun startImageActivity(url: String, title: String) {
         val intent = Intent(application, StudentDetailActivity::class.java)
         intent.putExtra("url", url)
         intent.putExtra("title", title)
