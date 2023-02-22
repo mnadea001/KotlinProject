@@ -27,7 +27,7 @@ class StudentListActivity : BaseActivity() {
         })
 
         buttonStudent2.setOnClickListener(View.OnClickListener {
-            val url = "https://media.licdn.com/dms/image/C4D03AQE-jTdsID5CYw/profile-displayphoto-shrink_200_200/0/1633015059108?e=1681948800&v=beta&t=Y3ErQgjcuPHIlwJpTMF82jpTqdgU7y-OsXkpk3ezvlg"
+            val url = "https://media.licdn.com/dms/image/D4E35AQEtSrH6VNpFuQ/profile-framedphoto-shrink_800_800/0/1646042283242?e=1677664800&v=beta&t=OHcU7IGUVW4XsLEgTGQ8-gIUfnlQsPPi5yMXGEVH1pM"
             startImageActivity(url,getString(R.string.student_list_button2))
         })
         buttonStudent3.setOnClickListener(View.OnClickListener {
