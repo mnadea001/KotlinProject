@@ -10,11 +10,7 @@ class HomeActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-
-
         setHeaderTxt("Home")
-
-
         val buttonStudentList = findViewById<Button>(R.id.buttonStudentList)
         val buttonCategoryList = findViewById<Button>(R.id.buttonCategoryList)
 //        add background on buttons

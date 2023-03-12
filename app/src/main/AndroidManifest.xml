@@ -43,6 +43,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ProduitAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".Produit"
+            android:exported="false" />
+        <activity
+            android:name=".ProduitListActivity"
+            android:exported="false" />
+
+
     </application>
 
 </manifest>
