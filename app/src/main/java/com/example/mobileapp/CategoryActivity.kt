@@ -2,13 +2,14 @@ package com.example.mobileapp
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.ListView
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import okhttp3.*
 import org.json.JSONObject
 import java.io.IOException
 
-class CategoryOnlineActivity : BaseActivity() {
+class CategoryActivity : BaseActivity() {
 
     companion object {
         private const val KEY_CATEGORY = "category"
@@ -19,18 +20,15 @@ class CategoryOnlineActivity : BaseActivity() {
         setContentView(R.layout.activity_category_online)
         showBack()
         setHeaderTxt("Catégories")
-
         val categories = arrayListOf<Category>()
-
-        val listviewCategories = findViewById<ListView>(R.id.listviewCategories)
-        val categoryAdapter = CategoryAdapter(this, categories, ::onCategoryClick)
-        listviewCategories.adapter = categoryAdapter
-
+        val recyclerViewCategories = findViewById<RecyclerView>(R.id.recyclerViewCategories)
+        recyclerViewCategories.layoutManager= LinearLayoutManager(this)
+        val categoryAdapter=    CategoryAdapter(categories)
+        recyclerViewCategories.adapter =  categoryAdapter
         val okHttpClient: OkHttpClient = OkHttpClient.Builder().build()
         val mRequestUrl = "https://www.ugarit.online/epsi/categories.json"
         val request =
             Request.Builder().url(mRequestUrl).cacheControl(CacheControl.FORCE_NETWORK).build()
-
         okHttpClient.newCall(request).enqueue(object : Callback {
             override fun onResponse(call: Call, response: Response) {
                 val data = response.body()?.string()
@@ -43,18 +41,15 @@ class CategoryOnlineActivity : BaseActivity() {
                         val category = Category(
                             jsCategory.optString("category_id", "Not found"),
                             jsCategory.optString("title", "Not found"),
-                            jsCategory.optString("product_url", "Not found")
+                            jsCategory.optString("products_url", "Not found")
                         )
                         categories.add(category)
                     }
                     runOnUiThread(Runnable {
                         categoryAdapter.notifyDataSetChanged()
                     })
-
-                    Log.e("WS", data)
                 }
             }
-
             override fun onFailure(call: Call, e: IOException) {
                 runOnUiThread(Runnable {
                     Toast.makeText(application, e.message, Toast.LENGTH_SHORT).show()
@@ -62,10 +57,8 @@ class CategoryOnlineActivity : BaseActivity() {
             }
 
         })
-    }
 
 
-    private fun onCategoryClick(category: Category) {
-        print("Hello")
+
     }
 }

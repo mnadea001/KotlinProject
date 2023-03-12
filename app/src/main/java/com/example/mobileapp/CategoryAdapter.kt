@@ -1,29 +1,45 @@
 package com.example.mobileapp
 
 import android.content.Context
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 
-class CategoryAdapter(
-    context: Context,
-    categories: List<Category>,
-    private val onClickListener: (Category) -> Unit
-) : ArrayAdapter<Category>(context, android.R.layout.simple_list_item_1, categories) {
+class CategoryAdapter (val categories: ArrayList<Category>): RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val view = convertView ?: LayoutInflater.from(context)
-            .inflate(R.layout.item_category, parent, false)
+    class ViewHolder(view:View) :RecyclerView.ViewHolder(view){
 
-        val category = getItem(position)
-        val titleTextView = view.findViewById<TextView>(R.id.textViewTitle)
-        titleTextView.text = category?.title
+        val textViewNom = view.findViewById<TextView>(R.id.textViewTitle)
+        val layoutContent= view.findViewById<LinearLayout>(R.id.layoutContentCategory)
+    }
 
-        val productUrlTextView = view.findViewById<TextView>(R.id.textViewProductUrl)
-        productUrlTextView.text = category?.products_url
+    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(viewGroup.context)
+            .inflate(R.layout.item_category, viewGroup, false)
+        return ViewHolder(view)
+    }
 
-        return view
+    override fun onBindViewHolder(holder: ViewHolder, index: Int) {
+        val category = categories.get(index)
+
+        holder.textViewNom.text=category.title
+        holder.layoutContent.setOnClickListener(View.OnClickListener {
+            val intent = Intent(holder.layoutContent.context, ProduitListActivity::class.java)
+            intent.putExtra("categorieTitle", category.title)
+            intent.putExtra("url", category.products_url)
+
+            holder.layoutContent.context.startActivity(intent)
+
+        })
+    }
+
+    override fun getItemCount(): Int {
+        return categories.size
     }
 }

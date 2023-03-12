@@ -17,8 +17,10 @@
         android:background="@color/purple_200"
         android:gravity="center"
         android:textStyle="bold"
-        android:textSize="28sp"
-        android:textColor="@color/black"/>
+        android:textSize="20sp"
+        android:textColor="@color/black"
+
+        />
 
         <ImageView
             android:id="@+id/imageViewBack"

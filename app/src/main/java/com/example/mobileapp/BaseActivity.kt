@@ -12,12 +12,12 @@ open class BaseActivity : AppCompatActivity() {
             super.onCreate(savedInstanceState)
         }
 
-        fun setHeaderTxt(txt:String) {
+        open fun setHeaderTxt(txt:String?) {
             val textViewTitle = findViewById<TextView>(R.id.textViewTitle)
             textViewTitle.setText(txt)
         }
 
-        fun showBack(){
+        open fun showBack(){
             val imageViewBack=findViewById<ImageView>(R.id.imageViewBack)
             imageViewBack.visibility=View.VISIBLE
             imageViewBack.setBackgroundColor(Color.parseColor("#9FA0C3"))

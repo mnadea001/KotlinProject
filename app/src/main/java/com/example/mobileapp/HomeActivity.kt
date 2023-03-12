@@ -22,7 +22,7 @@ class HomeActivity : BaseActivity() {
             startActivity(intent)
         })
         buttonCategoryList.setOnClickListener(View.OnClickListener {
-            val intent = Intent(application, CategoryOnlineActivity::class.java)
+            val intent = Intent(application, CategoryActivity::class.java)
             startActivity(intent)
         })
 

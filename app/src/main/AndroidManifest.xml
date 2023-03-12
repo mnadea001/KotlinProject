@@ -20,7 +20,7 @@
             android:name=".Category"
             android:exported="false" />
         <activity
-            android:name=".CategoryOnlineActivity"
+            android:name=".CategoryActivity"
             android:exported="false" />
         <activity
             android:name=".StudentAdapter"
@@ -61,6 +61,9 @@
             android:exported="false" />
         <activity
             android:name=".ProduitListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProduitDetailActivity"
             android:exported="false" />
 
 
