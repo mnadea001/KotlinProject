@@ -25,6 +25,10 @@ class HomeActivity : BaseActivity() {
             val intent = Intent(application, StudentListActivity::class.java)
             startActivity(intent)
         })
+        buttonCategoryList.setOnClickListener(View.OnClickListener {
+            val intent = Intent(application, CategoryOnlineActivity::class.java)
+            startActivity(intent)
+        })
 
     }
 }
