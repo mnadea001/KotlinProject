@@ -17,7 +17,16 @@
             android:name=".Student"
             android:exported="false" />
         <activity
+            android:name=".Category"
+            android:exported="false" />
+        <activity
+            android:name=".CategoryOnlineActivity"
+            android:exported="false" />
+        <activity
             android:name=".StudentAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".CategoryAdapter"
             android:exported="false" />
         <activity
             android:name=".StudentDetailActivity"
